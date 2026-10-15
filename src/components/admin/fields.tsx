@@ -211,9 +211,11 @@ export function SectionCard({
   children: ReactNode;
 }) {
   return (
-    <section className="space-y-space-md rounded-2xl border border-outline-variant/20 bg-surface-container p-space-lg">
+    <section className="space-y-space-md rounded-2xl border border-outline-variant/20 bg-surface-container p-space-md sm:p-space-lg">
       <div>
-        <h2 className="text-lg font-semibold uppercase tracking-wide">{title}</h2>
+        <h2 className="text-base font-semibold uppercase tracking-wide sm:text-lg">
+          {title}
+        </h2>
         {description ? (
           <p className="mt-1 text-sm text-tertiary">{description}</p>
         ) : null}
@@ -235,18 +237,20 @@ export function SaveBar({
   extra?: ReactNode;
 }) {
   return (
-    <div className="sticky bottom-0 z-10 -mx-space-xl border-t border-outline-variant/20 bg-surface/95 px-space-xl py-space-md backdrop-blur">
+    <div className="sticky bottom-0 z-10 -mx-space-md border-t border-outline-variant/20 bg-surface/95 px-space-md py-space-md backdrop-blur sm:-mx-space-lg sm:px-space-lg lg:-mx-space-xl lg:px-space-xl">
       <div className="flex flex-wrap items-center gap-space-md">
         <button
           type="button"
           disabled={saving}
           onClick={onSave}
-          className="rounded-lg bg-primary-container px-space-lg py-2 text-sm uppercase text-on-primary-container disabled:opacity-60"
+          className="w-full rounded-lg bg-primary-container px-space-lg py-2.5 text-sm uppercase text-on-primary-container disabled:opacity-60 sm:w-auto sm:py-2"
         >
           {saving ? "Saving…" : "Save changes"}
         </button>
         {extra}
-        {status ? <p className="text-sm text-secondary">{status}</p> : null}
+        {status ? (
+          <p className="w-full text-sm text-secondary sm:w-auto">{status}</p>
+        ) : null}
       </div>
     </div>
   );

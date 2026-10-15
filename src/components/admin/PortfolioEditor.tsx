@@ -181,13 +181,13 @@ export function PortfolioEditor({
         {error ? <p className="mt-2 text-sm text-primary-container">{error}</p> : null}
       </header>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="-mx-space-md flex gap-2 overflow-x-auto px-space-md pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
         {items.map((item) => (
           <button
             key={item.id}
             type="button"
             onClick={() => select(item.id)}
-            className={`rounded-lg px-3 py-2 text-xs uppercase ${
+            className={`shrink-0 rounded-lg px-3 py-2 text-xs uppercase ${
               selectedId === item.id
                 ? "bg-primary-container text-on-primary-container"
                 : "bg-surface-container-high text-tertiary"
@@ -200,7 +200,7 @@ export function PortfolioEditor({
         <button
           type="button"
           onClick={createNew}
-          className="rounded-lg bg-secondary-container px-3 py-2 text-xs uppercase text-on-secondary-container"
+          className="shrink-0 rounded-lg bg-secondary-container px-3 py-2 text-xs uppercase text-on-secondary-container"
         >
           + New project
         </button>

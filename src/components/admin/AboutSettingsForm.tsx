@@ -99,18 +99,20 @@ export function AboutSettingsForm({
             key={item.id}
             className="space-y-space-md rounded-xl border border-outline-variant/15 bg-surface-container-low p-space-md"
           >
-            <div className="flex items-center justify-between gap-2">
-              <Field label="Icon (Material Symbol)">
-                <TextInput
-                  value={item.icon}
-                  onChange={(icon) => {
-                    const highlights = data.highlights.map((h, i) =>
-                      i === index ? { ...h, icon } : h,
-                    );
-                    setData({ ...data, highlights });
-                  }}
-                />
-              </Field>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div className="min-w-0 flex-1">
+                <Field label="Icon (Material Symbol)">
+                  <TextInput
+                    value={item.icon}
+                    onChange={(icon) => {
+                      const highlights = data.highlights.map((h, i) =>
+                        i === index ? { ...h, icon } : h,
+                      );
+                      setData({ ...data, highlights });
+                    }}
+                  />
+                </Field>
+              </div>
               <button
                 type="button"
                 onClick={() =>
@@ -119,7 +121,7 @@ export function AboutSettingsForm({
                     highlights: data.highlights.filter((_, i) => i !== index),
                   })
                 }
-                className="text-xs text-primary-container"
+                className="self-start text-xs text-primary-container sm:self-end sm:pb-2"
               >
                 Remove
               </button>

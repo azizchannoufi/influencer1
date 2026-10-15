@@ -49,7 +49,7 @@ export function AdminHealthCheck() {
 
   return (
     <div
-      className={`mt-space-lg rounded-xl border p-space-md text-sm ${
+      className={`mt-space-lg rounded-xl border p-space-md text-sm break-words ${
         health.ok
           ? "border-secondary/40 bg-secondary/10 text-on-surface"
           : "border-primary-container/50 bg-primary-container/10 text-on-surface"

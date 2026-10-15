@@ -45,12 +45,14 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center px-gutter">
+    <div className="flex min-h-screen items-center justify-center px-space-md py-space-lg sm:px-gutter">
       <form
         onSubmit={onSubmit}
-        className="w-full max-w-md rounded-2xl bg-surface-container-low p-space-xl shadow-2xl"
+        className="w-full max-w-md rounded-2xl bg-surface-container-low p-space-lg shadow-2xl sm:p-space-xl"
       >
-        <h1 className="text-xl font-semibold uppercase tracking-wide">Admin Login</h1>
+        <h1 className="text-lg font-semibold uppercase tracking-wide sm:text-xl">
+          Admin Login
+        </h1>
         {!configured ? (
           <p className="mt-4 text-sm text-tertiary">
             Firebase client env vars are missing. Copy `.env.example` to `.env.local` and configure Firebase.

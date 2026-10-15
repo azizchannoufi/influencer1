@@ -49,18 +49,18 @@ const cards = [
 export default function AdminHomePage() {
   return (
     <div>
-      <h1 className="text-3xl font-semibold uppercase">Dashboard</h1>
-      <p className="mt-2 max-w-2xl text-tertiary">
+      <h1 className="text-2xl font-semibold uppercase sm:text-3xl">Dashboard</h1>
+      <p className="mt-2 max-w-2xl text-sm text-tertiary sm:text-base">
         Edit your site with forms — no code or JSON required. Pick a section to
         update content, then save. Check server status below if save or upload fails.
       </p>
       <AdminHealthCheck />
-      <div className="mt-space-xl grid gap-space-md sm:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-space-lg grid gap-space-md sm:mt-space-xl sm:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
           <Link
             key={card.href}
             href={card.href}
-            className="group rounded-2xl border border-outline-variant/25 bg-surface-container-low p-space-lg transition-colors hover:border-primary-container/50 hover:bg-surface-container"
+            className="group rounded-2xl border border-outline-variant/25 bg-surface-container-low p-space-md transition-colors hover:border-primary-container/50 hover:bg-surface-container sm:p-space-lg"
           >
             <span className="material-symbols-outlined text-[28px] text-primary">
               {card.icon}
